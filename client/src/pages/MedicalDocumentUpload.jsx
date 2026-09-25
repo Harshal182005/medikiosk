@@ -310,8 +310,8 @@ function MedicalDocumentUpload() {
     // ==========================================
 
     const handleFinish = () => {
-        navigate("/patient");
-    };
+            navigate("/patient/review");
+        };
 
     return (
         <div className="documents-page">
@@ -812,10 +812,9 @@ function MedicalDocumentUpload() {
                         <span>👨‍⚕️</span>
 
                         <p>
-                            Your uploaded information will be
-                            available to the doctor for review.
-                            AI-generated documentation does not
-                            replace clinical judgment.
+                           Your interview responses and uploaded
+                            medical documents are now available in
+                            the Doctor Dashboard for review.
                         </p>
 
                     </div>
@@ -825,8 +824,8 @@ function MedicalDocumentUpload() {
                         className="finish-button"
                         onClick={handleFinish}
                     >
-                        Finish
-                        <span>✓</span>
+                        Continue to Doctor Review
+                        <span>→</span>
                     </button>
 
                 </div>

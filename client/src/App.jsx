@@ -5,31 +5,36 @@ import {
     Navigate
 } from "react-router-dom";
 
+import RoleSelection from "./pages/RoleSelection";
 import PatientFlow from "./pages/PatientFlow";
 import Interview from "./pages/Interview";
 import MedicalDocumentUpload from "./pages/MedicalDocumentUpload";
 import DoctorDashboard from "./pages/DoctorDashboard";
+import DoctorLogin from "./pages/DoctorLogin";
+import PatientReview from "./pages/PatientReview";
+
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
 
-                {/* Default */}
+                {/* Main Landing Page */}
                 <Route
                     path="/"
-                    element={
-                        <Navigate
-                            to="/patient"
-                            replace
-                        />
-                    }
+                    element={<RoleSelection />}
                 />
 
                 {/* Patient Flow */}
                 <Route
                     path="/patient"
                     element={<PatientFlow />}
+                />
+
+                {/* Patient Review */}
+                <Route
+                    path="/patient/review"
+                    element={<PatientReview />}
                 />
 
                 {/* AI Interview */}
@@ -46,6 +51,12 @@ function App() {
                     }
                 />
 
+                {/* Doctor Login */}
+                <Route
+                    path="/doctor/login"
+                    element={<DoctorLogin />}
+                />
+
                 {/* Doctor Dashboard */}
                 <Route
                     path="/doctor/dashboard"
@@ -59,7 +70,7 @@ function App() {
                     path="/doctor"
                     element={
                         <Navigate
-                            to="/doctor/dashboard"
+                            to="/doctor/login"
                             replace
                         />
                     }
@@ -70,7 +81,7 @@ function App() {
                     path="*"
                     element={
                         <Navigate
-                            to="/patient"
+                            to="/"
                             replace
                         />
                     }
